@@ -3,6 +3,8 @@ import LanguageIcon from "@material-ui/icons/Language";
 import CodeIcon from "@material-ui/icons/Code";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import TwitterIcon from "@material-ui/icons/Twitter";
+// eslint-disable-next-line
 import { YouTube } from "@material-ui/icons";
 
 const data = {
@@ -13,11 +15,6 @@ const data = {
   email: "tmuruges@stevens.edu",
   phone: "5517861733",
   social: [
-    {
-      link: "https://thirunaa.github.io/",
-      text: "Website",
-      icon: <LanguageIcon />,
-    },
     {
       link: "https://github.com/Thirunaa",
       text: "Github",
@@ -32,6 +29,21 @@ const data = {
       link: "https://leetcode.com/Thiru_Mv/",
       text: "Leetcode",
       icon: <CodeIcon />,
+    },
+    {
+      link: "https://thirunaa.github.io/",
+      text: "Website",
+      icon: <LanguageIcon />,
+    },
+    {
+      link: "https://twitter.com/Thirunaa04",
+      text: "Twitter",
+      icon: <TwitterIcon />,
+    },
+    {
+      link: "https://www.youtube.com/@hashmap01",
+      text: "Youtube",
+      icon: <YouTube />,
     },
   ],
 
@@ -64,19 +76,19 @@ const data = {
       title: "Masters in Computer Science",
       date: "Aug 2021 - May 2023",
       description:
-        "•	Worked as Graduate Teaching Assistant under Prof. Shucheng Yu for course Applied Machine Learning, holding office hours, clarifying students’ questions, and grading students’ mid-term exam and final project \n\n •	Working as Graduate Teaching Assistant under Prof. Jingyi Sun for course Web Mining, conducting office hours, clarifying students’ questions, and grading students’ mid-term and final project report and presentation",
+        " Major: Computer Science\n\n Related Courses: CS546 - Web Development I, CS554 - Web Development II, EE695 - Applied Machine Learning, CS583 - Deep Learning, CS590 - Algorithms BIA678 - Big Data Technologies, BIA660 - Web Mining \n\n •	Worked as Graduate Teaching Assistant under Prof. Shucheng Yu for course Applied Machine Learning and currently Working as Graduate Teaching Assistant under Prof. Jingyi Sun for course Web Mining, conducting office hours, clarifying students’ questions, and grading students’ mid-term and final project report and presentation",
     },
     {
       title: "Bachelors in Computer Science and Engineering",
       date: "Aug 2012 - May 2016",
       description:
-        "•	Assisted Prof. Jingyi Sun in her research “US Fortune 500’s stakeholders engagement during the COVID-19 pandemic: Evidence for proactive approaches” scrapping and mining data from social media platforms \n\n •	Examined how U.S. Fortune 500 companies discussed their COVID-19 pandemic CSR actions on Facebook, Twitter, and other social media platforms over 15 months’ data and how the public responded to such messages",
+        " Major: Computer Science and Engineering\n\n •	Member of Computer Society of India. Active member of Confederation of Indian Industies and Young Indian [Trichy Chapter], took part in rallies to create awareness among the general public about Child Labour and its negative impact on society  \n\n •	Member of College football team, represented the college team in state tournament like TIES [Tamilnadu Inter Engineering colleges Sports] meet",
     },
     {
       title: "High School",
       date: "Jun 2010 - Mar 2012",
       description:
-        "•	Managed and worked in Tax applications with large DB2 tables (60-70 million records every month) to generate reports and send outbound files to different downstream areas, fetching data using IBM data studio by writing DB2 SQL queries \n\n •	Worked on transforming data intense application from Mainframe to AWS – changed large dataset and DB2 tables to change the job flow of the database operations, impacting up to 30+ teams at enterprise level \n\n •	Designed and implemented a dashboard utilizing Node.js and Express.js, with Postgres as the backend database. Integrated Chart.js and React.js for generating real-time graphs to monitor sensor data, resulting in a 72% reduction in manual workload and improved efficiency",
+        " Major : Computer Science\n\n •	Demonstrated leadership and people management skills as the captain of the school football team, cultivating a culture of teamwork and motivation. \n\n •	Served as house captain of the school sports house team, showcasing discipline and leadership by leading the athletes during school sports day.",
     },
   ],
 
@@ -134,7 +146,7 @@ const data = {
       description:
         " The employee tenure and retention data of company was taken and was analysis using various data analysis techniques.",
       links: [
-        { link: "https://www.google.com", icon: <YouTube /> },
+        // { link: "https://www.google.com", icon: <YouTube /> },
         { link: "https://www.github.com", icon: <GitHubIcon /> },
         { link: "https://www.github.com", icon: <LanguageIcon /> },
       ],
@@ -148,7 +160,7 @@ const data = {
       description:
         " The employee tenure and retention data of company was taken and was analysis using various data analysis techniques.",
       links: [
-        { link: "https://www.google.com", icon: <YouTube /> },
+        // { link: "https://www.google.com", icon: <YouTube /> },
         { link: "https://www.github.com", icon: <GitHubIcon /> },
         { link: "https://www.github.com", icon: <LanguageIcon /> },
       ],
@@ -161,7 +173,7 @@ const data = {
       description:
         " The employee tenure and retention data of company was taken and was analysis using various data analysis techniques.",
       links: [
-        { link: "https://www.google.com", icon: <YouTube /> },
+        // { link: "https://www.google.com", icon: <YouTube /> },
         { link: "https://www.github.com", icon: <GitHubIcon /> },
         { link: "https://www.github.com", icon: <LanguageIcon /> },
       ],
@@ -174,7 +186,7 @@ const data = {
       description:
         " The employee tenure and retention data of company was taken and was analysis using various data analysis techniques.",
       links: [
-        { link: "https://www.google.com", icon: <YouTube /> },
+        // { link: "https://www.google.com", icon: <YouTube /> },
         { link: "https://www.github.com", icon: <GitHubIcon /> },
         { link: "https://www.github.com", icon: <LanguageIcon /> },
       ],
@@ -187,7 +199,7 @@ const data = {
       description:
         " The employee tenure and retention data of company was taken and was analysis using various data analysis techniques.",
       links: [
-        { link: "https://www.google.com", icon: <YouTube /> },
+        // { link: "https://www.google.com", icon: <YouTube /> },
         { link: "https://www.github.com", icon: <GitHubIcon /> },
         { link: "https://www.github.com", icon: <LanguageIcon /> },
       ],
@@ -200,7 +212,7 @@ const data = {
       description:
         " The employee tenure and retention data of company was taken and was analysis using various data analysis techniques.",
       links: [
-        { link: "https://www.google.com", icon: <YouTube /> },
+        // { link: "https://www.google.com", icon: <YouTube /> },
         { link: "https://www.github.com", icon: <GitHubIcon /> },
         { link: "https://www.github.com", icon: <LanguageIcon /> },
       ],

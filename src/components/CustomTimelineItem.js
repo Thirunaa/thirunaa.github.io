@@ -12,14 +12,14 @@ function CustomTimelineItem({ title, text, link }) {
       <TimelineContent className={classes.timeline_content}>
         {link ? (
           <Typography className={classes.timeline_text}>
-            <span color="black">{title}:</span>{" "}
+            <strong className={classes.timeline_title_strong}>{title}:</strong>{" "}
             <a textDecoration="none" className={classes.timeline_text_a} href={link} target="_blank" rel="noreferrer">
               {text}
             </a>
           </Typography>
         ) : (
           <Typography className={classes.timeline_text}>
-            <span color="black">{title}:</span>
+            <strong className={classes.timeline_title_strong}>{title}:</strong>
             {text}
           </Typography>
         )}

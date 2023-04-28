@@ -22,6 +22,7 @@ const useStyles = makeStyles({
     color: "gray",
     fontSize: "small",
     marginTop: "6px",
+    whiteSpace: "pre-line !important",
   },
 
   recommendation: {
@@ -85,6 +86,26 @@ const useStyles = makeStyles({
       color: "black",
       fontWeight: "500",
     },
+  },
+  custom_btn: {
+    backgroundColor: "var(--main-color) !important",
+    fontSize: "14px !important",
+    fontWeight: "500 !important",
+    border: "0 !important",
+    borderRadius: "50px !important",
+    padding: "1px 12px !important",
+    lineHeight: "35px !important",
+    minWidth: "100px !important",
+    outline: "none !important",
+  },
+
+  btn_txt: {
+    fontSize: "14px !important",
+    textTransform: "none !important",
+    textAlign: "center",
+    width: "100%",
+    marginRight: "5px",
+    marginLeft: "5px",
   },
 
   contactInfo_socialsContainer: {

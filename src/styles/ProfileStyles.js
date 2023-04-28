@@ -43,7 +43,7 @@ const useStyles = makeStyles({
     margin: "-40px 10px 30px",
   },
   timeline_content: {
-    marginTop: "2px",
+    marginTop: "1px",
     marginBottom: "12px",
   },
   timeline_text: {
@@ -56,6 +56,10 @@ const useStyles = makeStyles({
     color: "#787878 !important",
     textDecoration: "none",
   },
+  timeline_title_strong: {
+    color: "black !important",
+  },
+
   container_shadow: {
     boxShadow: "0px 2px 92px 0px rgba(0, 0, 0, 0.13)",
     WebkitBoxShadow: "0px 2px 92px 0px rgba(0, 0, 0, 0.13)",

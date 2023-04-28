@@ -5,7 +5,9 @@ import { useStyles } from "../styles/HeaderStyles.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 // eslint-disable-next-line
 import { Link, NavLink, withRouter } from "react-router-dom";
-import { HomeRounded, Telegram } from "@material-ui/icons";
+// eslint-disable-next-line
+import { HomeRounded, Telegram, LocalCafe } from "@material-ui/icons";
+
 import resumeData from "../utils/resumeData.js";
 import CustomButton from "./CustomButton";
 
@@ -41,7 +43,10 @@ function Header({ props }) {
               {key.icon}
             </a>
           ))}
-          <CustomButton text={"Hire Me"} icon={<Telegram />} />
+          {/* <a href="mailto:tmuruges@stevens.edu"> */}
+          <div onClick={() => window.open("mailto:tmuruges@stevens.edu")}>
+            <CustomButton text={"Mail Me"} icon={<Telegram />} />
+          </div>
         </div>
       </Navbar.Collapse>
     </Navbar>

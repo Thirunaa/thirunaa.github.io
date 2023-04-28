@@ -1,17 +1,54 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 import "../App.css";
 import resumeData from "../utils/resumeData.js";
-import { Paper, Typography, Grid, TextField } from "@material-ui/core";
+import { Paper, Typography, Button, Grid, TextField } from "@material-ui/core";
 import { useStyles } from "../styles/ResumeStyles";
-import { Work, School } from "@material-ui/icons";
+import { Work, School, LocalCafe } from "@material-ui/icons";
 import CustomTimeline from "../components/CustomTimeline";
 import Avatar from "@mui/material/Avatar";
 // eslint-disable-next-line
-import { TimelineContent, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector } from "@material-ui/lab";
+import { Alert, AlertTitle, TimelineContent, TimelineItem, TimelineDot } from "@material-ui/lab";
 import CustomTimelineSeparator from "../components/CustomTimelineSeparator";
 import CustomButton from "../components/CustomButton";
+
 function Resume(props) {
   const classes = useStyles();
+  const form = useRef();
+  // eslint-disable-next-line
+  let sentFlag = false;
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm("service_22fd4y9", "template_1sps5j9", e.target, "FudVH24QNJYCS9pWH").then(
+      (result) => {
+        console.log(result.text + " - Email Sent");
+        sentFlag = true;
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+
+    e.target.reset();
+
+    // if (sentFlag) {
+    //   return (
+    //     <Alert severity="success">
+    //       <AlertTitle>Message Sent</AlertTitle>
+    //       <strong>Email sent to Thirunaavukkarasu. Thank you!</strong>
+    //     </Alert>
+    //   );
+    // } else {
+    //   return (
+    //     <Alert severity="error">
+    //       <AlertTitle>Error</AlertTitle>
+    //       There was an error while trying to send the message — <strong>Please retry after sometime.</strong>
+    //     </Alert>
+    //   );
+    // }
+  };
+
   return (
     <>
       {/* About me */}
@@ -45,7 +82,7 @@ function Resume(props) {
                 {resumeData.data.experiences.map((experience) => (
                   <TimelineItem key={experience.title}>
                     <CustomTimelineSeparator />
-                    <TimelineContent key={experience.title} className={classes.timeline_content}>
+                    <TimelineContent className={classes.timeline_content}>
                       <Typography className={classes.timeline_title}>{experience.title}</Typography>
                       <Typography variant="caption" className={classes.timeline_date}>
                         {experience.date}
@@ -66,7 +103,7 @@ function Resume(props) {
                 {resumeData.data.educations.map((education) => (
                   <TimelineItem key={education.title}>
                     <CustomTimelineSeparator />
-                    <TimelineContent key={education.title} className={classes.timeline_content}>
+                    <TimelineContent className={classes.timeline_content}>
                       <Typography className={classes.timeline_title}>{education.title}</Typography>
                       <Typography variant="caption" className={classes.timeline_date}>
                         {education.date}
@@ -91,7 +128,7 @@ function Resume(props) {
                 <Grid container>
                   {resumeData.data.recommendations.map((recommendation) => (
                     <Grid item key={recommendation.name} xs={12} sm={6} md={3}>
-                      <Paper elevation={0} key={recommendation.name} className={classes.recommendation}>
+                      <Paper elevation={0} className={classes.recommendation}>
                         <div
                           className={classes.recommendation_avatar}
                           onClick={() =>
@@ -128,13 +165,13 @@ function Resume(props) {
             <Grid container className="section graybg p_50 pb_50">
               <Grid container spacing={3} justify={"space-between"}>
                 {resumeData.data.skills.map((skill) => (
-                  <Grid item xs={12} sm={6} md={3}>
+                  <Grid item key={skill.title} xs={12} sm={6} md={3}>
                     <Paper elevation={0} className={classes.skills}>
                       <Typography variant="h6" className={classes.skills_title}>
                         {skill.title}
                       </Typography>
                       {skill.description.map((el) => (
-                        <Typography variant="body2" className={classes.skills_description}>
+                        <Typography variant="body2" key={el} className={classes.skills_description}>
                           <TimelineDot variant="outlined" className={classes.skills_description_timeline_dot} />
                           {el}
                         </Typography>
@@ -154,22 +191,41 @@ function Resume(props) {
                     <h2>Contact Form</h2>
                   </Grid>
 
-                  <Grid item className="top_30">
-                    <Grid container spacing={2}>
-                      <Grid item xs={12} sm={6}>
-                        <TextField fullWidth name="name" label="Name" />
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <TextField fullWidth name="email" label="E-mail" />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <TextField fullWidth label="Message" multiline rows={4} />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <CustomButton text={"Submit"} />
+                  <form ref={form} onSubmit={sendEmail}>
+                    <Grid item className="top_30">
+                      <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                          <TextField required fullWidth name="name" label="Name"></TextField>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <TextField required fullWidth name="email" label="E-mail"></TextField>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            required
+                            fullWidth
+                            name="message"
+                            label="Message"
+                            multiline
+                            minRows={4}
+                          ></TextField>
+                        </Grid>
+                        <Grid item xs={12}>
+                          {/* <CustomButton type="submit" text={"Submit"}></CustomButton> */}
+                          <Button type="submit" className={classes.custom_btn}>
+                            <span className={classes.btn_txt}>{"Submit"}</span>
+                          </Button>
+                        </Grid>
+                        <br />
+
+                        <Grid item xs={12}>
+                          <div onClick={() => window.open("https://www.buymeacoffee.com/ThiruMv", "mywindow")}>
+                            <CustomButton text={"Buy me a coffee"} icon={<LocalCafe />} />
+                          </div>
+                        </Grid>
                       </Grid>
                     </Grid>
-                  </Grid>
+                  </form>
                 </Grid>
               </Grid>
 

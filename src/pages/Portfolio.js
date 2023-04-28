@@ -45,6 +45,7 @@ function Portfolio() {
 
           {[...new Set(resumeData.data.projects.map((item) => item.tag))].map((tag) => (
             <Tab
+              key={tag}
               label={tag}
               value={tag}
               className={tabValue === tag ? classes.customTabs_item_active : classes.customTabs_item}
@@ -58,7 +59,7 @@ function Portfolio() {
           {resumeData.data.projects.map((project) => (
             <>
               {tabValue === project.tag || tabValue === "All" ? (
-                <Grid item xs={12} sm={6} md={4} lg={3}>
+                <Grid key={project.title} item xs={12} sm={6} md={4} lg={3}>
                   <Grow in timeout={1000}>
                     <Card className={classes.custom_card} onClick={() => setIsOpen(project)}>
                       <CardActionArea>
@@ -94,7 +95,7 @@ function Portfolio() {
         </DialogContent>
         <DialogActions className={classes.dialogbox_actions}>
           {isOpen?.links?.map((link) => (
-            <a href={link.link} target="_blank" rel="noreferrer" className={classes.dialogbox_icon}>
+            <a key={link.link} href={link.link} target="_blank" rel="noreferrer" className={classes.dialogbox_icon}>
               {" "}
               {link.icon}
             </a>

@@ -16,7 +16,8 @@ function Profile() {
   let email = resumeData.data.email;
   let name = resumeData.data.name;
   let jobtitle = resumeData.data.title;
-  let social = resumeData.data.social;
+  // Removed website, twitter and youtube from profile component. You can change this code accordingly if you want to add them.
+  let social = resumeData.data.social.slice(0, -3);
 
   return (
     <div className={classes.profile}>
@@ -39,7 +40,12 @@ function Profile() {
           ))}
         </CustomTimeline>
         <br />
-        <div className={classes.button_container}>
+        <div
+          className={classes.button_container}
+          onClick={(e) => {
+            window.open(`${require("../utils/Thirunaavukkarasu_Murugesan_Resume.pdf")}`, "_blank");
+          }}
+        >
           <CustomButton text={"Download cv"} icon={<GetAppIcon />} />
         </div>
       </div>
